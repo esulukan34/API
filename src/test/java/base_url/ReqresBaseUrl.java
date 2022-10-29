@@ -4,14 +4,12 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
-
-public class JsonplaceholderBaseUrl {
+public class ReqresBaseUrl {
     protected RequestSpecification spec;
 
     @Before
     public void setup() {
-        spec = new RequestSpecBuilder().setBaseUri("https://jsonplaceholder.typicode.com").build();
+        spec = new RequestSpecBuilder().setBaseUri("https://reqres.in/api").build();
     }
-
 
 }
