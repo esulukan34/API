@@ -27,15 +27,20 @@ public class Get02b extends ReqresBaseUrl {
     @Test
     public void get02() {
         // Set The Url
-
+        spec.pathParams("first","users","second",23);
 
         // Set The Expected  Data
 
         // Send the Request and Get The Response
+        Response response=given().spec(spec).get("/{first}/{second}");
+        response.prettyPrint();
 
 
         // Do Assertion
-
+        assertEquals(404,response.statusCode());
+        assertEquals("HTTP/1.1 404 Not Found",response.statusLine());
+        assertEquals("cloudflare",response.getHeader("Server"));
+        assertEquals(2,response.asString().replaceAll("\\s","").length());
 
 
     }

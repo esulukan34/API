@@ -25,18 +25,24 @@ public class Get01b {
     public void get01() {
 
         // Set the URL
+        String url = "https://reqres.in/api/users/3";
 
 
         // Set The Expected Data
 
         // Send The Request and Get The Response
-
+        Response response = given().when().get(url);
+        response.prettyPrint();
 
         // Do Assertion
 
         // HTTP Status Code should be 200
         // Content Type should be JSON
         // tatus Line should be HTTP/1.1 200 OK
+        response.then().
+                statusCode(200).
+                contentType(ContentType.JSON).
+                statusLine("HTTP/1.1 200 OK");
 
 
 

@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertEquals;
 
 public class Get03b extends ReqresBaseUrl {
     /*
@@ -31,13 +32,23 @@ public class Get03b extends ReqresBaseUrl {
     @Test
     public void get03() {
         // Set The Url
-
+        spec.pathParams("first","users","second",2);
 
         // Set The Expected  Data
 
         // Send the Request and Get The Response
+        Response response=given().spec(spec).get("/{first}/{second}");
+        response.prettyPrint();
 
         // Do Assertion
+        response.then().
+                statusCode(200).
+                contentType(ContentType.JSON).
+                body("data.email",equalTo("janet.weaver@reqres.in"),
+                        "data.first_name",equalTo("Janet"),
+                        "data.last_name",equalTo("Weaver"),
+                        "support.text",equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
+
 
 
 
