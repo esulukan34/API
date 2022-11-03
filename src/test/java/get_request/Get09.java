@@ -51,11 +51,11 @@ public class Get09 extends RestfulBaseUrl {
         expectedData.put("additionalneeds","Breakfast");
         System.out.println(expectedData);
 
-//Send The Request and Get The Response
+        //Send The Request and Get The Response
         Response response = given().spec(spec).when().get("/{first}/{second}");
         response.prettyPrint();
 
-//Do Assertion
+        //Do Assertion
         Map<String,Object> actualData = response.as(HashMap.class);
         assertEquals(expectedData.get("firstname"),actualData.get("firstname"));
         assertEquals(expectedData.get("lastname"),actualData.get("lastname"));
