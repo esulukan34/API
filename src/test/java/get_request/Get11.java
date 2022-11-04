@@ -1,6 +1,7 @@
 package get_request;
 
 import base_url.GoRestBaseUrl;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
 
@@ -73,11 +74,15 @@ public class Get11 extends GoRestBaseUrl {
 
         // 2.Yol : Kadin ve erkek sayilarini Groovy ile bulalim
 
-        List<String> femaleGender = response.jsonPath().getList("data.findAll{it.gender=='female'}.gender");
+        List<String> femaleGender = response.jsonPath().getList("data.findAll{it.gender =='female'}.gender");
         System.out.println(femaleGender);
 
         assertTrue(femaleGender.size()<= genders.size());
 
+        // 3.Yol
+        JsonPath jsonPath = response.jsonPath();
+        assertTrue(jsonPath.
+                getList("data.findAll{it.gender='female'}").size()<=jsonPath.getList("data.findAll{it.gender='male'}").size());
 
     }
 }
