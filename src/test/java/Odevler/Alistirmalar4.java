@@ -13,8 +13,8 @@ public class Alistirmalar4 {
        Then
              Status code is 200
              And response body is like   {
-                                                "name": "neo",
-                                                "updatedAt": "2022-10-02T12:53:21.675Z"
+                    "name": "neo",
+                    "updatedAt": "2022-10-02T12:53:21.675Z"
                                          }
     */
 }

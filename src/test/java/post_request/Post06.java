@@ -99,6 +99,6 @@ public class Post06 extends DummyRestApiBaseUrl {
         assertEquals(expectedData.getAge(), actualData.getData().getAge());
         assertEquals(expectedData.getProfile_image(), actualData.getData().getProfile_image());
 
-        DummyRestApiPojo actualData = response.as(DummyRestApiPojo.class);
+
     }
 }

@@ -14,10 +14,10 @@ public class Alistirmalar2 {
         Then
             Status code is 201
             And response body should be like {
-                                                "name": "morpheus",
-                                                "job": "leader",
-                                                "id": "496",
-                                                "createdAt": "2022-10-04T15:18:56.372Z"
+                                "name": "morpheus",
+                                "job": "leader",
+                                "id": "496",
+                                "createdAt": "2022-10-04T15:18:56.372Z"
                                               }
 */
 
