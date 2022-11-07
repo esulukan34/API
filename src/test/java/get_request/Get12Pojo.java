@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class Get12Pojo extends RestfulBaseUrl {
     /*
      Given
-         https://restful-booker.herokuapp.com/booking/18
+         https://restful-booker.herokuapp.com/booking/15
      When
     I send GET Request to the URL
    Then
@@ -20,26 +20,26 @@ public class Get12Pojo extends RestfulBaseUrl {
 And
     Response body is like:
                         {
-                             "firstname": "Dane",
-                             "lastname": "Combs",
-                             "totalprice": 111,
-                             "depositpaid": true,
-                             "bookingdates": {
-                                 "checkin": "2018-01-01",
-                                 "checkout": "2019-01-01"
-                             },
-                             "additionalneeds": "Breakfast"
+                        "firstname": "Jim",
+                        "lastname": "Brown",
+                        "totalprice": 111,
+                        "depositpaid": true,
+                        "bookingdates": {
+                            "checkin": "2018-01-01",
+                            "checkout": "2019-01-01"
+                        },
+                        "additionalneeds": "Breakfast"
                          }
   */
 
     @Test
     public void get12Pojo() {
-        spec.pathParams("first","booking","second",18);
+        spec.pathParams("first","booking","second",15);
 
         // Set The Expected  Data
         BookingDatesPojo bookingDatesPojo = new BookingDatesPojo("2018-01-01","2019-01-01");
         System.out.println(bookingDatesPojo.toString());
-        BookingPojo expectedData = new BookingPojo("Dane","Combs",111,true,bookingDatesPojo,"Breakfast");
+        BookingPojo expectedData = new BookingPojo("Jim","Brown",111,true,bookingDatesPojo,"Breakfast");
         System.out.println(expectedData.toString());
 
         // Set the Request and Get the Response

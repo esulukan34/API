@@ -19,15 +19,15 @@ public class Get09 extends RestfulBaseUrl {
       Then
           Response body should be like that;
            {
-          "firstname": "Sally",
-          "lastname": "Brown",
-          "totalprice": 111,
-          "depositpaid": true,
-          "bookingdates": {
-              "checkin": "2013-02-23",
-              "checkout": "2014-10-23"
-          },
-          "additionalneeds": "Breakfast"
+            "firstname": "Carlos",
+            "lastname": "Vera",
+            "totalprice": 111,
+            "depositpaid": true,
+            "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+    },
+    "additionalneeds": "Breakfast"
           }
    */
     @Test
@@ -43,8 +43,8 @@ public class Get09 extends RestfulBaseUrl {
 
         Map<String,Object> expectedData = new HashMap<>();
 
-        expectedData.put("firstname","Sally");
-        expectedData.put("lastname","Brown");
+        expectedData.put("firstname","Carlos");
+        expectedData.put("lastname","Vera");
         expectedData.put("totalprice",111);
         expectedData.put("depositpaid",true);
         expectedData.put("bookingdates",bookingdatesMap);
