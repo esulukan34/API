@@ -3,19 +3,19 @@ package pojos;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DummyRestApiPojo {
+public class DummyRestApiDeletePojo {
 
     private String status;
-    private DummyRestApiDatePojo data;
+    private String data;
     private String message;
 
-    public DummyRestApiPojo(String status, DummyRestApiDatePojo data, String message) {
+    public DummyRestApiDeletePojo(String status, String data, String message) {
         this.status = status;
         this.data = data;
         this.message = message;
     }
 
-    public DummyRestApiPojo() {
+    public DummyRestApiDeletePojo() {
     }
 
     public String getStatus() {
@@ -26,11 +26,11 @@ public class DummyRestApiPojo {
         this.status = status;
     }
 
-    public DummyRestApiDatePojo getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(DummyRestApiDatePojo data) {
+    public void setData(String data) {
         this.data = data;
     }
 
@@ -44,9 +44,9 @@ public class DummyRestApiPojo {
 
     @Override
     public String toString() {
-        return "DummyRestApiPojo{" +
+        return "DummyRestApiDeletePojo{" +
                 "status='" + status + '\'' +
-                ", data=" + data +
+                ", data='" + data + '\'' +
                 ", message='" + message + '\'' +
                 '}';
     }

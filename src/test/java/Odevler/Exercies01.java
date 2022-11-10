@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-public class Alistirmalar1 extends AutomationExerciesUrl {
+public class Exercies01 extends AutomationExerciesUrl {
     /*
         Given
             https://automationexercise.com/api/brandsList
@@ -43,15 +43,16 @@ public class Alistirmalar1 extends AutomationExerciesUrl {
 
 
         // Do Assertion
-        assertEquals(200,response.getStatusCode());
+        assertEquals(200, response.getStatusCode());
         assertEquals("text/html; charset=utf-8", response.contentType());
         assertEquals("HTTP/1.1 200 OK", response.statusLine());
 
-        List<String> Polo = jsonPath.getList("brands.findAll{it.brand=='Polo'}.brand");
+        List<String> Polo = jsonPath.getList("brands.findAll{it.brand =='Polo'}.brand");
         System.out.println("Polo = " + Polo);
-        List<String> HM = jsonPath.getList("brands.findAll{it.brand=='H&M'}.brand");
+        List<String> HM = jsonPath.getList("brands.findAll{it.brand =='H&M'}.brand");
         System.out.println("HM = " + HM);
-        assertNotEquals(Polo.size(),HM.size());
+        assertNotEquals(Polo.size(), HM.size());
+
 
     }
 }

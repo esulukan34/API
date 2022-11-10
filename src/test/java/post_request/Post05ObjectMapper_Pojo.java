@@ -34,12 +34,15 @@ public class Post05ObjectMapper_Pojo extends JsonplaceholderBaseUrl {
     public void post05ObjectMapper() {
         //Set the Url
         spec.pathParam("first", "todos");
+
         //Set the Expected Data
         JsonPlaceHolderPojo expectedData = new JsonPlaceHolderPojo(55, "Tidy your room", false);
         System.out.println("expectedData = " + expectedData);
+
         //Send the Request and Get the Response
         Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedData).when().post("/{first}");
         response.prettyPrint();
+
         //Do Assertion
         JsonPlaceHolderPojo actualData = ObjectMapperUtils.convertJsonToJava(response.asString(), JsonPlaceHolderPojo.class);
         System.out.println("actualData = " + actualData);

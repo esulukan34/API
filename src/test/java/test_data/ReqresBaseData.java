@@ -3,6 +3,7 @@ package test_data;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class ReqresBaseData {
 
     public Map<String,Object> expectedDataMethod(Integer id, String name, Integer year, String color, String pantone_value){
@@ -24,4 +25,17 @@ public class ReqresBaseData {
 
         return supportMap;
     }
+
+    public String expectedDataInString(String name, String job, Integer id, String createdAt) {
+
+        String expectedData = "{\n" +
+                    "              \"name\": "+name+",\n" +
+                    "              \"job\": "+job+",\n" +
+                    "              \"id\": "+id+",\n" +
+                    "              \"createdAt\": "+createdAt+"\n" +
+                    "              }";
+
+        return expectedData;
+    }
+
 }
